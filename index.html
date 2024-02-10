@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.45/esri/css/esri.css">
+    
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+
+    <title>Prueba Tecnica</title>
+</head>
+<body>
+    <div class="formulario">
+        <form id="poiForm">
+            <div class="style">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required/>
+            </div>
+            <div class="style">
+                <label for="direction">Dirección:</label>
+                <input type="text" id="direction" name="direction" required/>
+            </div>
+            <div class="style">
+                <label for="telephone">Telefono:</label>
+                <input type="tel" id="telephone" name="telephone" required/>
+            </div>
+            <div class="style">
+                <label for="category">Categoria:</label>
+                <select name="category" id="category" required>
+                    <option value="">Seleccionar</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="residencial">Residencial</option>
+                    <option value="mixta">Mixta</option>
+                </select>
+            </div>
+            <div class="style">
+                <label for="coord">Coord. (Latitud, Longitud):</label>
+                <input type="text" id="coord" name="coord" placeholder="Ej: -34.595986,-58.3724715" required/>
+            </div>
+            <button id="poiButton" type="button" onclick="agregarPunto()">Agregar Punto</button>
+        </form>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://js.arcgis.com/3.45/"></script>
+    <script src="assets/index.js"></script>
+</body>
+</html>

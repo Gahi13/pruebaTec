@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.formulario{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin: 0.4%;
+    padding: 1%;
+    background-color: bisque;
+}
+.style{
+    padding: 2%;
+    width: 95%;
+}
+.style label{
+    align-content: start;
+}
+.style input{
+    align-items: end;
+}
+
+#map{
+    width: 50%;
+}
