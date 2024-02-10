@@ -45,15 +45,19 @@ function agregarPunto() {
 
     var punto = new Point(parseFloat(coord[1]), parseFloat(coord[0]));
     var simbolo = new SimpleMarkerSymbol().setStyle(SimpleMarkerSymbol.STYLE_CIRCLE).setColor([255, 0, 0, 1]);
+    // punto 3
     var content = "<b>Nombre:</b> " + name + "<br><b>Dirección:</b> " + direction + "<br><b>Teléfono:</b> " + telephone + "<br><b>Categoría:</b> " + category + "<br><b>Coordenadas:</b> " + punto.x + ", " + punto.y;
     var graficoPunto = new Graphic(punto, simbolo).setInfoTemplate(new esri.InfoTemplate("Punto de Interés", content));
 
     capa.add(graficoPunto);
     mapa.centerAt(punto);
 
-    console.log("Nombre:", name);
-    console.log("Dirección:", direction);
-    console.log("Teléfono:", telephone);
-    console.log("Categoría:", category);
-    console.log("Coordenadas:", punto.x, punto.y);
+    graficoPunto.getDojoShape().connect("mouseover", function () {
+        mapa.infoWindow.setContent(content);
+        mapa.infoWindow.show(punto);
+    });
+
+    graficoPunto.getDojoShape().connect("mouseout", function () {
+        mapa.infoWindow.hide();
+    });
 }

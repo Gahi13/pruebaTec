@@ -5,53 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.45/esri/css/esri.css">
-    
-    <style>
-        #map {
-            height: 500px;
-            width: 100%;
-            margin-top: 20px;
-        }
-    </style>
-
+    <!--fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--fuentes-->
     <title>Prueba Tecnica</title>
 </head>
 <body>
-    <div class="formulario">
-        <form id="poiForm">
-            <div class="style">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required/>
-            </div>
-            <div class="style">
-                <label for="direction">Dirección:</label>
-                <input type="text" id="direction" name="direction" required/>
-            </div>
-            <div class="style">
-                <label for="telephone">Telefono:</label>
-                <input type="tel" id="telephone" name="telephone" required/>
-            </div>
-            <div class="style">
-                <label for="category">Categoria:</label>
-                <select name="category" id="category" required>
-                    <option value="">Seleccionar</option>
-                    <option value="comercial">Comercial</option>
-                    <option value="residencial">Residencial</option>
-                    <option value="mixta">Mixta</option>
-                </select>
-            </div>
-            <div class="style">
-                <label for="coord">Coord. (Latitud, Longitud):</label>
-                <input type="text" id="coord" name="coord" placeholder="Ej: -34.595986,-58.3724715" required/>
-            </div>
-            <button id="poiButton" type="button" onclick="agregarPunto()">Agregar Punto</button>
-        </form>
-    </div>
-
-    <div id="map"></div>
-
+    <header>
+        <img id="logo" src="assets/images/logo-aeroterra-blanco-iso-color-tablero-01-01.png" alt="">
+    </header>
+    <main>
+        <div id="contenido" >
+            <form id="poiForm">        
+                <div class="formulario">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Ej: Aeroterra" required/>
+                </div>
+                <div class="formulario">
+                    <label for="direction">Dirección:</label>
+                    <input type="text" id="direction" name="direction" placeholder="Ej: Av. Eduardo Madero 1020" required/>
+                </div>
+                <div class="formulario">
+                    <label for="telephone">Teléfono:</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Ej: 01152720900" required/>
+                </div>
+                <div class="formulario">
+                    <label for="category">Categoría:</label>
+                    <select class="alinearIzq" name="category" id="category" required>
+                        <option value="">Seleccionar</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="residencial">Residencial</option>
+                        <option value="mixta">Mixta</option>
+                    </select>
+                </div>
+                <div class="formulario">
+                    <label for="coord">Coord. (Latitud, Longitud):</label>
+                    <input type="text" id="coord" name="coord" placeholder="Ej: -34.595986,-58.3724715" required/>
+                </div>
+                <button id="poiButton" type="button" onclick="agregarPunto()">Agregar Punto</button>
+            </form>
+            <div id="map"></div>
+        </div>
+    </main>
     <script src="https://js.arcgis.com/3.45/"></script>
     <script src="assets/index.js"></script>
-    
+
 </body>
 </html>
